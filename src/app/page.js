@@ -1,113 +1,10 @@
-// import Image from "next/image";
-
-// export default function Home() {
-//   return (
-//     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-//       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-//         <Image
-//           className="dark:invert"
-//           src="/next.svg"
-//           alt="Next.js logo"
-//           width={180}
-//           height={38}
-//           priority
-//         />
-//         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-//           <li className="mb-2 tracking-[-.01em]">
-//             Get started by editing{" "}
-//             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-//               src/app/page.js
-//             </code>
-//             .
-//           </li>
-//           <li className="tracking-[-.01em]">
-//             Save and see your changes instantly.
-//           </li>
-//         </ol>
-
-//         <div className="flex gap-4 items-center flex-col sm:flex-row">
-//           <a
-//             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-//             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <Image
-//               className="dark:invert"
-//               src="/vercel.svg"
-//               alt="Vercel logomark"
-//               width={20}
-//               height={20}
-//             />
-//             Deploy now
-//           </a>
-//           <a
-//             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-//             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Read our docs
-//           </a>
-//         </div>
-//       </main>
-//       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/file.svg"
-//             alt="File icon"
-//             width={16}
-//             height={16}
-//           />
-//           Learn
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/window.svg"
-//             alt="Window icon"
-//             width={16}
-//             height={16}
-//           />
-//           Examples
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/globe.svg"
-//             alt="Globe icon"
-//             width={16}
-//             height={16}
-//           />
-//           Go to nextjs.org →
-//         </a>
-//       </footer>
-//     </div>
-//   );
-// }
-
 
 "use client"
 import { useState, useEffect } from "react";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import { FiMenu, FiX, FiArrowDown } from "react-icons/fi";
 import { toast } from "react-hot-toast";
+import { Facebook, Instagram, Linkedin, Send } from "lucide-react";
 
 export default function Home() {
   // Navigation state
@@ -164,28 +61,28 @@ export default function Home() {
       title: "Event Planning",
       description: "Complete event coordination from concept to execution for weddings, corporate events, and special occasions.",
       features: ["Wedding Planning", "Corporate Events", "Birthday Parties", "Full Coordination"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+      image: "/image/event2.jpg",
       icon: "🎉"
     },
     {
       title: "Catering Services",
       description: "Delicious, high-quality catering for events of all sizes with customizable menus.",
       features: ["Custom Menus", "Dietary Options", "Professional Service", "Event Setup"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop",
+      image: "/image/event1.jpg",
       icon: "🍽️"
     },
     {
       title: "Cake Baking & Decoration",
       description: "Custom cakes designed and baked fresh for your special occasions with creative decoration.",
-      features: ["Custom Designs", "Fresh Ingredients", "All Occasions", "Delivery Available"],
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop",
+      features: ["Pastries", "Fresh Ingredients", "All Occasions", "Delivery Available"],
+      image: "/image/cakes.jpg",
       icon: "🎂"
     },
     {
       title: "Real Estate Services",
       description: "Professional assistance with buying, selling, and renting properties with market expertise.",
       features: ["Property Sales", "Rental Services", "Market Analysis", "Property Management"],
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=400&h=300&fit=crop",
+      image: "/image/realesate.jpg",
       icon: "🏠"
     }
   ];
@@ -195,44 +92,110 @@ export default function Home() {
       id: 1,
       title: "Modern E-commerce Website",
       category: "development",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
+      image: "/image/website1.jpg",
+      description: "Responsive online store with payment integration"
+    },
+ {
+      id: 2,
+      title: "Modern E-commerce Website",
+      category: "development",
+      image: "/image/web1.jpg",
+      description: "Responsive online store with payment integration"
+    },
+
+     {
+      id: 3,
+      title: "Modern E-commerce Website",
+      category: "development",
+       image: "/image/web2.jpg",
       description: "Responsive online store with payment integration"
     },
     {
-      id: 2,
-      title: "Elegant Wedding Reception",
-      category: "events",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop",
-      description: "250-guest wedding with full coordination"
-    },
-    {
-      id: 3,
-      title: "Corporate Gala Dinner",
-      category: "catering",
-      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop",
-      description: "5-course dinner for 100 executives"
-    },
-    {
       id: 4,
-      title: "Custom Birthday Cake",
-      category: "cakes",
-      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop",
-      description: "3-tier fondant cake with custom decorations"
+      title: "Birthday Parties Reception",
+      category: "events",
+      image: "/image/event2.jpg",
+      description: "300 guest birthday party with full coordination"
     },
     {
       id: 5,
-      title: "Luxury Family Home",
-      category: "realestate",
-      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop",
-      description: "4-bedroom home sold in 2 weeks"
+      title: "Elegant Wedding Reception",
+      category: "events",
+      image: "/image/eventw.jpg",
+      description: "1000 guest wedding with full coordination"
+    },
+
+ {
+      id: 6,
+      title: "Shareholder Meetings",
+      category: "events",
+      image: "/image/eventw1.jpg",
+      description: "250 guest shareholder meeting with full coordination"
     },
     {
-      id: 6,
-      title: "React Dashboard App",
-      category: "development",
-      image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop",
-      description: "Analytics dashboard with real-time data"
-    }
+      id: 7,
+      title: "Award Ceremonies & Galas",
+      category: "catering",
+      image: "/image/event1.jpg",
+      description: "5 course dinner for 100 executives"
+    },
+  {
+      id: 8,
+      title: "Summits & Diplomatic Dinners",
+      category: "catering",
+      image: "/image/eventc.jpg",
+      description: "Dinner for 300 executives"
+    },
+     {
+      id: 9,
+      title: "Celebrity Weddings/Birthdays",
+      category: "catering",
+      image: "/image/eventc1.jpg",
+      description: "Dinner for Celebrity Weddings/Birthdays for 450 guests"
+    },
+    {
+      id: 10,
+      title: "Custom Birthday Cake",
+      category: "cakes",
+      image: "/image/cakes.jpg",
+      description: "2 tier fondant cake with unique decorations"
+    },
+     {
+      id: 11,
+      title: "Platinum Cake",
+      category: "cakes",
+      image: "/image/cakes1.jpg",
+      description: "uncovered cake with fresh fruits and flowers"
+    },
+     {
+      id: 12,
+      title: "Wedding Cake",
+      category: "cakes",
+      image: "/image/cake2.jpg",
+      description: "3 tier fondant cake with custom decorations"
+    },
+    {
+      id: 13,
+      title: "Documentation/Quality Control",
+      category: "realestate",
+      image: "/image/realesate.jpg",
+      description: "Property documentation and quality control for real estate projects"
+    },
+      {
+      id: 14,
+      title: "Site Engineer",
+      category: "realestate",
+      image: "/image/real1.jpg",
+      description: "Technical Supervision of construction projects with a focus on quality and safety"
+    },
+
+    {
+      id: 15,
+      title: "Luxury Family Home",
+      category: "realestate",
+      image: "/image/real2.jpg",
+      description: "4-bedroom home sold in 4 weeks"
+    },
   ];
 
   const filters = [
@@ -246,31 +209,31 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Olufunmilayo Omowunmi",
       role: "Bride",
       service: "Event Planning",
       content: "Absolutely amazing! She planned our dream wedding perfectly. Every detail was taken care of, and the day was magical. Highly recommend!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=100&h=100&fit=crop&crop=face"
+      image: "/image/eventc1.jpg"
     },
     {
-      name: "Michael Chen",
-      role: "CEO",
+      name: "Kolapo Taofeeq",
+      role: "Technical Director",
       service: "Frontend Development",
       content: "The website she built for our company exceeded all expectations. Professional, fast, and exactly what we needed to grow our business.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=100&h=100&fit=crop&crop=face"
     },
     {
-      name: "Emma Davis",
+      name: "Ajao Olayinka",
       role: "Property Buyer",
       service: "Real Estate",
-      content: "Found us the perfect family home within our budget. Her knowledge of the market and dedication to clients is outstanding.",
+      content: "Found us the perfect land within our budget. Her knowledge of the market and dedication to clients is outstanding.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1498936178812-4b2e558d2937?w=100&h=100&fit=crop&crop=face"
     },
     {
-      name: "David Rodriguez",
+      name: "Ibiloye Abisola",
       role: "Corporate Client",
       service: "Catering",
       content: "The catering for our company event was exceptional. Delicious food, professional service, and great attention to dietary requirements.",
@@ -278,7 +241,7 @@ export default function Home() {
       image: "https://images.unsplash.com/photo-1452960962994-acf4fd70b632?w=100&h=100&fit=crop&crop=face"
     },
     {
-      name: "Lisa Thompson",
+      name: "Mrs Royal",
       role: "Mother",
       service: "Cake Baking",
       content: "The custom cake for my daughter's birthday was absolutely stunning and delicious. She captured exactly what we envisioned!",
@@ -356,7 +319,7 @@ export default function Home() {
   };
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "1234567890";
+    const phoneNumber = "09032434519";
     const message = "Hi! I'm interested in your services. Can we discuss?";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -375,9 +338,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Your Brand
-              </h1>
+             <div className="flex items-center space-x-2">
+              <div className="">
+                  <img
+                      src="/image/logods.png"
+                      alt="logo"
+                      className="w-[150px] h-[45px] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+                    />
+                 </div>
+
+              </div>
             </div>
 
             {/* Desktop Navigation */}
@@ -448,9 +418,9 @@ export default function Home() {
               <div className="text-center">
                 <div className="animate-fade-in">
                   <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-                    Hi, I m{" "}
+                    Hi, I&apos;m{" "}
                     <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      Your Name
+                      DESIRE
                     </span>
                   </h1>
 
@@ -462,8 +432,8 @@ export default function Home() {
                   </div>
 
                   <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                    From building beautiful websites to planning unforgettable events, creating delicious cakes,
-                    and helping you find your dream property - I bring passion and expertise to everything I do.
+                    From building beautiful websites to planning unforgettable events, baking delicious cakes,
+                    and helping you find your dream property I bring passion and expertise to everything I do.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -483,7 +453,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+              <div className="absolute bottom-8 left-1/2 pt-20 transform -translate-x-1/2 animate-bounce">
                 <button
                   onClick={scrollToAbout}
                   className="text-gray-600 hover:text-blue-600 transition-colors"
@@ -518,18 +488,18 @@ export default function Home() {
                     </p>
                     <p>
                       Whether you need a stunning website, an unforgettable event, delicious catering,
-                      a custom cake, or help with real estate, I m committed to delivering exceptional
+                      a perfect cake, or help with real estate, I m committed to delivering exceptional
                       results that exceed your expectations.
                     </p>
                   </div>
 
                   <div className="mt-8 grid grid-cols-2 gap-4">
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">5+</div>
+                      <div className="text-2xl font-bold text-blue-600">2+</div>
                       <div className="text-sm text-gray-600">Years Experience</div>
                     </div>
                     <div className="text-center p-4 bg-purple-50 rounded-lg">
-                      <div className="text-2xl font-bold text-purple-600">200+</div>
+                      <div className="text-2xl font-bold text-purple-600">100+</div>
                       <div className="text-sm text-gray-600">Happy Clients</div>
                     </div>
                   </div>
@@ -559,7 +529,7 @@ export default function Home() {
                   My Services
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  From digital solutions to lifes special moments, I offer a comprehensive range of services
+                  From digital solutions to life&apos;s special moments, I offer a comprehensive range of services
                   to meet all your needs.
                 </p>
               </div>
@@ -674,7 +644,7 @@ export default function Home() {
                   What Clients Say
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Dont just take my word for it - hear from the amazing clients Ive had the pleasure to work with.
+                  Dont just take my word for it hear from the amazing clients Ive had the pleasure to work with.
                 </p>
               </div>
 
@@ -753,7 +723,7 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">Email</div>
-                        <div className="text-gray-600">your.email@example.com</div>
+                        <div className="text-gray-600">adeyemok831@gmail.com</div>
                       </div>
                     </div>
 
@@ -763,7 +733,7 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">Phone</div>
-                        <div className="text-gray-600">+1 (555) 123-4567</div>
+                        <div className="text-gray-600">+234 9032434519</div>
                       </div>
                     </div>
 
@@ -773,30 +743,32 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">Location</div>
-                        <div className="text-gray-600">Your City, State</div>
+                        <div className="text-gray-600">Ilorin City, Kwara State</div>
                       </div>
                     </div>
                   </div>
-
-                  <div className="mt-8">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
-                    <div className="flex space-x-4">
-                      <a href="#" className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
-                        <span className="sr-only">Facebook</span>
-                        <div className="w-5 h-5">📘</div>
-                      </a>
-                      <a href="#" className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors">
-                        <span className="sr-only">Instagram</span>
-                        <div className="w-5 h-5">📷</div>
-                      </a>
-                      <a href="#" className="bg-blue-400 text-white p-3 rounded-lg hover:bg-blue-500 transition-colors">
-                        <span className="sr-only">LinkedIn</span>
-                        <div className="w-5 h-5">💼</div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
+     <div className="mt-8">
+  <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
+  <div className="flex space-x-4">
+    <a href="https://www.facebook.com/olamide.adeyemo.94/" className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
+      <span className="sr-only">Facebook</span>
+      <Facebook className="w-5 h-5" />
+    </a>
+    <a href="https://www.instagram.com/adesire603/" className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors">
+      <span className="sr-only">Instagram</span>
+      <Instagram className="w-5 h-5" />
+    </a>
+    <a href="https://www.linkedin.com/in/adeyemo-oluwakemi-0a4154248/" className="bg-blue-400 text-white p-3 rounded-lg hover:bg-blue-500 transition-colors">
+      <span className="sr-only">LinkedIn</span>
+      <Linkedin className="w-5 h-5" />
+    </a>
+    <a href="https://t.me/Desire390" className="bg-blue-300 text-white p-3 rounded-lg hover:bg-blue-400 transition-colors">
+      <span className="sr-only">Telegram</span>
+      <Send className="w-5 h-5" /> {/* Lucide uses 'Send' for Telegram */}
+    </a>
+  </div>
+</div>
+</div>
                 {/* Contact Form */}
                 <div className="bg-gray-50 rounded-2xl p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -886,30 +858,37 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-                Your Brand
-              </h3>
+                <div className="pb-5">
+        <img
+                      src="/image/logods.png"
+                      alt="logo"
+                      className="w-[150px] h-[50px] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+                    />
+      </div>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 Bringing expertise in frontend development, event planning, catering, cake baking,
                 and real estate services to help you achieve your goals.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <span className="sr-only">Facebook</span>
-                  <div className="w-6 h-6">📘</div>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <span className="sr-only">Instagram</span>
-                  <div className="w-6 h-6">📷</div>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <span className="sr-only">LinkedIn</span>
-                  <div className="w-6 h-6">💼</div>
-                </a>
-              </div>
-            </div>
-
-            <div>
+               <div className="flex space-x-4">
+    <a href="https://www.facebook.com/olamide.adeyemo.94/" className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
+      <span className="sr-only">Facebook</span>
+      <Facebook className="w-5 h-5" />
+    </a>
+    <a href="https://www.instagram.com/adesire603/" className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors">
+      <span className="sr-only">Instagram</span>
+      <Instagram className="w-5 h-5" />
+    </a>
+    <a href="https://www.linkedin.com/in/adeyemo-oluwakemi-0a4154248/" className="bg-blue-400 text-white p-3 rounded-lg hover:bg-blue-500 transition-colors">
+      <span className="sr-only">LinkedIn</span>
+      <Linkedin className="w-5 h-5" />
+    </a>
+    <a href="https://t.me/Desire390" className="bg-blue-300 text-white p-3 rounded-lg hover:bg-blue-400 transition-colors">
+      <span className="sr-only">Telegram</span>
+      <Send className="w-5 h-5" />
+    </a>
+  </div>
+    </div>
+        <div>
               <h4 className="text-lg font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-gray-300">
                 <li><a href="#" className="hover:text-white transition-colors">Frontend Development</a></li>
@@ -931,8 +910,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {currentYear} Your Brand. All rights reserved.</p>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-gray-400">
+            <p>&copy; {currentYear} Desire. All rights reserved.</p>
           </div>
         </div>
       </footer>
