@@ -5,6 +5,9 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa"
 import { FiMenu, FiX, FiArrowDown } from "react-icons/fi";
 import { toast } from "react-hot-toast";
 import { Facebook, Instagram, Linkedin, Send } from "lucide-react";
+import axios from "axios";
+import Sendmessage from "@/components/Sendmessage";
+import About from "@/components/About";
 
 export default function Home() {
   // Navigation state
@@ -23,13 +26,6 @@ export default function Home() {
   // Testimonials state
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  // Contact form state
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    service: "",
-    message: ""
-  });
 
   // Data arrays
   const services = [
@@ -164,7 +160,7 @@ export default function Home() {
       id: 11,
       title: "Platinum Cake",
       category: "cakes",
-      image: "/image/cakes1.jpg",
+      image: "/image/cakeforevent.jpg",
       description: "uncovered cake with fresh fruits and flowers"
     },
      {
@@ -304,19 +300,7 @@ export default function Home() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast.success("Thank you for your inquiry. I'll get back to you soon!");
-    setFormData({ name: "", email: "", service: "", message: "" });
-  };
 
-  const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "09032434519";
@@ -343,7 +327,7 @@ export default function Home() {
                   <img
                       src="/image/logods.png"
                       alt="logo"
-                      className="w-[150px] h-[45px] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+                      className="lg:w-[150px] h-[45px] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
                     />
                  </div>
 
@@ -465,60 +449,89 @@ export default function Home() {
           </div>
         </section>
 
+
+ {/* About Section */}
+       <About/>
         {/* About Section */}
-        <section id="about">
-          <div className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="animate-fade-in">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                    About Me
-                  </h2>
-                  <div className="space-y-4 text-gray-600 leading-relaxed">
-                    <p>
-                      Welcome! I m a passionate Frontend Developer with a unique blend of technical expertise
-                      and creative services. My journey began in web development, where I discovered my love
-                      for creating beautiful, functional digital experiences.
-                    </p>
-                    <p>
-                      Over the years, I ve expanded my skills beyond coding to include event planning,
-                      catering, cake decorating, and real estate services. This diverse background allows
-                      me to bring a unique perspective to every project, combining technical precision
-                      with creative flair.
-                    </p>
-                    <p>
-                      Whether you need a stunning website, an unforgettable event, delicious catering,
-                      a perfect cake, or help with real estate, I m committed to delivering exceptional
-                      results that exceed your expectations.
-                    </p>
-                  </div>
+<section id="about">
+  <div className="py-20 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            About Me
+          </h2>
+          <div className="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              Welcome! Im a passionate Frontend Developer with a unique blend of technical expertise
+              and creative services. My journey began in web development, where I discovered my love
+              for creating beautiful, functional digital experiences.
+            </p>
+            <p>
+              Over the years, Ive expanded my skills beyond coding to include event planning,
+              catering, cake decorating, and real estate services. This diverse background allows
+              me to bring a unique perspective to every project, combining technical precision
+              with creative flair.
+            </p>
+            <p>
+              Whether you need a stunning website, an unforgettable event, delicious catering,
+              a perfect cake, or help with real estate, I m committed to delivering exceptional
+              results that exceed your expectations.
+            </p>
+          </div>
 
-                  <div className="mt-8 grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">2+</div>
-                      <div className="text-sm text-gray-600">Years Experience</div>
-                    </div>
-                    <div className="text-center p-4 bg-purple-50 rounded-lg">
-                      <div className="text-2xl font-bold text-purple-600">100+</div>
-                      <div className="text-sm text-gray-600">Happy Clients</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-                    <img
-                      src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=600&fit=crop"
-                      alt="About me"
-                      className="w-full h-96 object-cover"
-                    />
-                  </div>
-                  <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-blue-200 to-purple-200 rounded-2xl"></div>
-                </div>
-              </div>
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <div className="text-2xl font-bold text-blue-600">2+</div>
+              <div className="text-sm text-gray-600">Years Experience</div>
+            </div>
+            <div className="text-center p-4 bg-purple-50 rounded-lg">
+              <div className="text-2xl font-bold text-purple-600">100+</div>
+              <div className="text-sm text-gray-600">Happy Clients</div>
             </div>
           </div>
-        </section>
+        </div>
+
+        <div className="relative">
+          {/* Image Rotator */}
+          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-96">
+            {/* Replace these with your actual images */}
+             <img
+              src="/image/me1.jpg"
+              alt="me"
+              className="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+              id="rotating-image"
+            />
+             <img
+              src="/image/me2.jpg"
+              alt="me"
+              className="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+              id="rotating-image"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=600&fit=crop"
+              alt="Web Development"
+              className="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+              id="rotating-image"
+            />
+          </div>
+          <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-blue-200 to-purple-200 rounded-2xl"></div>
+          {/* Image Selector Dots */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <button
+                key={index}
+                className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none"
+                onClick={() => changeImage(index)}
+                aria-label={`Show image ${index}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Services Section */}
         <section id="services">
@@ -769,84 +782,9 @@ export default function Home() {
   </div>
 </div>
 </div>
-                {/* Contact Form */}
-                <div className="bg-gray-50 rounded-2xl p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                        Service Needed
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="development">Frontend Development</option>
-                        <option value="events">Event Planning</option>
-                        <option value="catering">Catering Services</option>
-                        <option value="cakes">Cake Baking</option>
-                        <option value="realestate">Real Estate</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={5}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        placeholder="Tell me about your project..."
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-                    >
-                      Send Message
-                    </button>
-                  </form>
-                </div>
+<div className="">
+<Sendmessage/>
+</div>
               </div>
             </div>
           </div>
