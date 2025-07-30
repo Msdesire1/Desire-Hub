@@ -463,12 +463,12 @@ export default function Home() {
           </h2>
           <div className="space-y-4 text-gray-600 leading-relaxed">
             <p>
-              Welcome! Im a passionate Frontend Developer with a unique blend of technical expertise
+              Welcome! I&nbsp;m a passionate Frontend Developer with a unique blend of technical expertise
               and creative services. My journey began in web development, where I discovered my love
               for creating beautiful, functional digital experiences.
             </p>
             <p>
-              Over the years, Ive expanded my skills beyond coding to include event planning,
+              Over the years, I&nbsp;ve expanded my skills beyond coding to include event planning,
               catering, cake decorating, and real estate services. This diverse background allows
               me to bring a unique perspective to every project, combining technical precision
               with creative flair.
