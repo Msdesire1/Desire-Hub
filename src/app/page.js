@@ -325,9 +325,9 @@ export default function Home() {
              <div className="flex items-center space-x-2">
               <div className="">
                   <img
-                      src="/image/logods.png"
+                      src="/image/desire-hub1.png"
                       alt="logo"
-                      className="lg:w-[150px] h-[45px] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+                      className="lg:w-[150px] h-[45px] rounded-lg transform transition-transform duration-300 hover:scale-105"
                     />
                  </div>
 
@@ -798,9 +798,9 @@ export default function Home() {
             <div className="col-span-1 md:col-span-2">
                 <div className="pb-5">
         <img
-                      src="/image/logods.png"
+                     src="/image/desire-hub2.png"
                       alt="logo"
-                      className="w-[150px] h-[50px] rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+                      className="w-[150px] h-[50px]  transform transition-transform duration-300 hover:scale-105"
                     />
       </div>
               <p className="text-gray-300 mb-4 leading-relaxed">
